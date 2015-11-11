@@ -1,7 +1,8 @@
 var app = {
 
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
+        alert("initialize");
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -9,6 +10,7 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
+        alert("bind events");
         if (window.location.host.toLocaleLowerCase() == 'localhost' ||
             window.location.host.toLocaleLowerCase() == 'localhost:3000') {
             angular.bootstrap(document, ['septiflowApp']);
@@ -22,6 +24,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
+        alert("on device ready");
         if (typeof device != 'undefined') {
             app.log('This app is running on ' + device.platform);
             app._runningOnDevice = true;
