@@ -15,8 +15,18 @@ septiflowAppRouter.config(function ($routeProvider) {
             controller: 'jobsController'
         })
 
-        .when('/GPS', {
-            templateUrl: 'GPS.html',
-            controller: 'GPSController'
+        .when('/jobssample', {
+            templateUrl: 'jobssample.html',
+            controller: 'jobsController'
+        })
+
+        .when('/gps', {
+            templateUrl: 'gps.html',
+            controller: 'gpsController'
+        })
+
+        .when('/gpsnav', {
+            templateUrl: 'gpsnav.html',
+            controller: 'gpsnavController'
         });
 });

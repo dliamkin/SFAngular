@@ -33,7 +33,7 @@ model = function () {
     };
 
     this.getJobs = function (callback) {
-        db.query('_views/jobs', { include_docs: true }, function (err, response) {
+        db.query('_views/jobs', { reduce: false,  limit: 100, descending: true, include_docs: true }, function (err, response) {
             if (err) {
                 alert("ERROR: Failed to get jobs")
             }
@@ -41,9 +41,11 @@ model = function () {
         });
     };
 
-    //this.delete = function (error) {
-    //    db.remove
-    //};
+    this.delete = function (jobId) {
+        db.get(jobid, function (doc) {
+            return db.remove(doc);
+        });
+    };
 
     function sync() {
         syncDom.setAttribute('data-sync-state', 'syncing');
